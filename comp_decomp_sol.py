@@ -1,4 +1,7 @@
 # using list as stack
+"""
+translate '3[abc]4[ab]c' into abcabcabcabababc
+"""
 import sys
 
 stack  = []    

@@ -1,3 +1,4 @@
+#python3 code
 from urllib.request import urlopen
 
 with urlopen('http://sixty-north.com/c/t.txt') as story:
