@@ -48,11 +48,22 @@ def cached_general_case_staircase(n, X):
         cache[i] += sum(cache[i - x] for x in X if i - x >= 0)
     return cache[n]
 
-if __name__ == '__main__':
-    steps = int(sys.argv[1])
-    X = [int(x) for x in sys.argv[2].split(',')]
+def main(args):
+    if len(args) != 3:
+        raise AssertionError("Usage:\n\t{0} {1} '{2}' {3}\n\tExpected Result: {4}\n\tPlease Try Again!\n\t".format('python3', __file__, '16', '1,2,3', '10609' ))
+    #print(sum_two_numbers(args[1].split(','), args[2]))
+    steps = int(args[1])
+    X = [int(x) for x in args[2].split(',')]
     #print(general_case_staircase(steps, X))
     #print(single_case_staircase(steps))
     print(cached_general_case_staircase(steps, X))
+
+
+if __name__ == "__main__":
+    try:
+        main(sys.argv)
+    except AssertionError as e:
+        print(e)
+        sys.exit(0)
 
 

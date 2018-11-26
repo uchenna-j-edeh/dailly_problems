@@ -15,7 +15,16 @@ def sum_two_numbers(nlist, k):
             return ndiff, nl
         ndict[nl] = 1
 
+def main(args):
+    if len(args) != 3:
+        raise AssertionError("Usage:\n\t{0} {1} '{2}' {3}\n\tExpected Result: {4}\n\tPlease Try Again!\n\t".format('python3', __file__, '10,4,3,9,7', '17', '(10, 7)' ))
+    print(sum_two_numbers(args[1].split(','), args[2]))
+
 if __name__ == "__main__":
-    mlist = sys.argv[1].split(',') 
-    k = sys.argv[2]
-    print(sum_two_numbers(mlist, k))
+    try:
+        main(sys.argv)
+    except AssertionError as e:
+        print(e)
+        sys.exit(0)
+
+
