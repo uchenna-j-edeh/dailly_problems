@@ -1,4 +1,5 @@
 """
+Author Uchenna Edeh
 given a list example [10, 4, 3,9, 7]. Figure if given a number k. There two numbers that sums up to k. If k is 7, then 10 + 7 is 17.
 """
 import sys
