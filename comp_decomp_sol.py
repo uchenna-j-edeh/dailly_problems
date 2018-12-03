@@ -1,57 +1,32 @@
-# using list as stack
 """
+Author: Uchenna Edeh
+This work is copyright protected...
 translate '3[abc]4[ab]c' into abcabcabcabababc
-incorrect code
 """
 import sys
-
-stack  = []    
-
+ 
+final_str = ''
 def decompress(args):
-    #stack = []    
-    global stack
-
-    for i, elem in enumerate(args):
-        if elem == ']':
-            process_stack()
+    _digits = ''
+    _characters = ''
+    start_bracket = False 
+    original_str = ''
+    #import pdb; pdb.set_trace()
+    for i in args:
+        if i.isdigit():
+            _digits = _digits + i
+        elif i == '[':
+            start_bracket = True
+        elif i == ']':
+            original_str = original_str + _characters*int(_digits)
+            _digits = ''
+            _characters = ''
+            start_bracket = False
+        elif start_bracket is True:
+            _characters = _characters + i
+        
         else:
-            stack.append(elem)
-
-    print(''.join(stack))
-
-def process_stack():
-    global stack
-
-    collection = ""    
-    print ('stack: ', stack)
-
-    j = len(stack) # last index
-    for i in range(j):
-
-        val = stack.pop()
-
-        if val == '[':
-            number = calculate_digits()
-            stack.append(collection*int(number))        
-            break
-
-        collection = collection + val
-
-
-def calculate_digits():
-    global stack
-    j = len(stack)
-    total = ""
-    for i in range(j):
-        val = stack.pop()
-
-        if not val.isdigit():
-            stack.append(val)
-            return total 
-
-        if not len(stack):
-            return val + total
-
-        total = val + total
+            original_str = original_str + i
+    return original_str
 if __name__ == '__main__':
-        decompress(sys.argv[1])
+    print(decompress(sys.argv[1]))
