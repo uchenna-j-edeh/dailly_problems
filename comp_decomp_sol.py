@@ -24,7 +24,6 @@ def decompress(args):
             start_bracket = False
         elif start_bracket is True:
             _characters = _characters + i
-        
         else:
             original_str = original_str + i
     return original_str
