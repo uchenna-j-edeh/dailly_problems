@@ -5,17 +5,17 @@ Implement a job scheduler which takes in a function and an integer and call f af
 import sys
 import time
 
-def scheduler(callback_a, n):
+def scheduler(callback, n):
     # generate time in mill seconds
     my_time = float(n / 1000) 
     time.sleep(my_time)
     # call function 
-    callback_a(my_time)
+    callback(callback.__name__, my_time)
     
     sys.exit(0)
 
-def greetings(elapse):
-    print("calling me after {} milliseconds".format(elapse))
+def greetings(func_name, elapse):
+    print("Calling {} after {} milliseconds".format(func_name, elapse))
 
 def main(args):
     if len(args) != 2:
