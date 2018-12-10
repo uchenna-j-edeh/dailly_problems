@@ -26,10 +26,7 @@ def solution1(total_count):
         if r <= 1:
             counter += 1 
 
-    pie = 4 * counter / total_count
-
-    return pie
-
+    return 4 * counter / total_count
 
 
 def main(args):
