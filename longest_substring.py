@@ -1,4 +1,44 @@
 """
-Given an integer k and a substring s, find the length of the longest substring that contains at most k distinc characters
-for example, given s = "abcba" and k = 2, then the longest substring with k distinct characters is 'bcb'
+Author: Uchenna Edeh
+Example 'a beautiful day!' would give 'ul day!'
+"pwwkew" should produce "wke"
 """
+import sys
+
+def solution1(my_str):
+    longest_str = ''
+    running_total = ''
+    my_hash = dict()
+    for _char in my_str:
+        if my_hash.get(_char, False):
+            #print(running_total)
+            #print(longest_str)
+            if len(running_total) > len(longest_str):
+                longest_str = running_total
+            my_hash = dict()
+            my_hash[_char] = 1
+            running_total = _char
+
+        else:
+            running_total = running_total + _char
+            my_hash[_char] = 1
+
+    if len(running_total) > len(longest_str):
+        longest_str = running_total
+
+    return (len(longest_str), longest_str)
+
+def main(args):
+    if len(args) != 2:
+        raise AssertionError("Usage:\n\tpython3 {0} '{1}'\n\tExpected Result: {2}\n\tPlease Try Again!\n\t".format(__file__, "a beautiful day!", '(7, ul day!)' ))
+    print(solution1(args[1]))
+
+if __name__ == "__main__":
+    try:
+        main(sys.argv)
+    except AssertionError as e:
+        print(e)
+        sys.exit(1)
+
+
+
