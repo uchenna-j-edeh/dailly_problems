@@ -25,36 +25,46 @@ def solution1(words, k):
     accumulation = 0
     new_text = ''
 
+    #import pdb; pdb.set_trace()
+    k = int(k)
     for i, val in enumerate(words):
 
-        if len(accumulation) + len(val) > k:
-            new_text = normalize_text(words[1+i:], k)
+        if accumulation + len(val) > k:
+            import pdb; pdb.set_trace()
+            new_text = new_text + '\n' + normalize_text(words[1+i:], k)
+            accumulation = len(val) 
         else:
-            accumulation = len(accumulation) + len(val) + 1 # one added to count for space character
+            accumulation = accumulation + len(val) + 1 # We need to add 1 for the space between words
 
     return new_text
 
 def normalize_text(words, k):
-    len_words = len(''.join(words))
-    num_words = len(words)
-    remainder = k - len_words 
-    num_location =  num_words - 1
+    len_words = len(''.join(words)) # length of all the words joined
+    num_words = len(words) # how many words?
+    remainder = k - len_words # how many spaces left after the words are in place 
+    num_location =  num_words - 1 # num of location that will need space
 
-    space_count = remainder / num_location
+    space_count = remainder // num_location # how many space can we get into the available location on average
 
-    remainder = remainder % num_location
-    ave_space = ' '*space_count
+    remainder = remainder % num_location # how may space left after initial placement?
+    ave_space = ' '*space_count # average space
 
-    _text = ave_space.join(words)
-    new_text = ''
+    remainder_text = ''
+    remainder_space = ave_space
+    if remainder:
+        remainder_space = ' '*(space_count + 1)
+        remainder_words = words[:remainder]
+        remainder_text = remainder_space.join(remainder_words)
 
-    for i in enumerate(_text):
+    other_text = ave_space.join(words[remainder:])
+    full_text = remainder_text + remainder_space + other_text
+    
+    return full_text
 
-        if remainder and i == ave_space:
-            remainder = remainder - 1
-            new_text = 
+    
 
 
+    
 
      
 
