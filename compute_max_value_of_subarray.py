@@ -9,6 +9,7 @@ for example, give array = [10, 5, 2, 7, 8, 7] and k = 3, we should get [10, 7, 8
         8 = max(2, 7, 8)
         8 = max(7, 8, 7)
 
+solve in contant time and 0 space.
 Algo:
 iterate over array. have a second loop iterate over sub list if element left is at least ( n - i >= k ).
 """

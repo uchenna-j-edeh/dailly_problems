@@ -23,20 +23,29 @@ def solution1(words, k):
     print(k)
     print(words)
     accumulation = 0
-    new_text = ''
+    new_text = [] 
+    prev_inx = 0
+    num_words = 0
 
-    #import pdb; pdb.set_trace()
     k = int(k)
     for i, val in enumerate(words):
 
         if accumulation + len(val) > k:
-            import pdb; pdb.set_trace()
-            new_text = new_text + '\n' + normalize_text(words[1+i:], k)
-            accumulation = len(val) 
+            new_text.append(normalize_text(words[prev_inx:i], k))
+            prev_inx = i
+            accumulation = len(val) + 1
+        elif words[-1] == val:
+            new_text.append(normalize_text(words[prev_inx:], k))
+            print(num_words)
+            print(len(words))
+            return new_text
         else:
             accumulation = accumulation + len(val) + 1 # We need to add 1 for the space between words
+        
+        num_words = num_words + 1
 
-    return new_text
+    new_text.append(words[-1]) 
+    return new_text # takes care of tha last word
 
 def normalize_text(words, k):
     len_words = len(''.join(words)) # length of all the words joined
@@ -59,17 +68,7 @@ def normalize_text(words, k):
     other_text = ave_space.join(words[remainder:])
     full_text = remainder_text + remainder_space + other_text
     
-    return full_text
-
-    
-
-
-    
-
-     
-
-
-
+    return full_text.strip()
 
 def main(args):
     if len(args) != 3:

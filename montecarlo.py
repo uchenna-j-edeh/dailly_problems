@@ -60,8 +60,8 @@ def main(args):
     now = datetime.now()
     if len(args) != 2:
         raise AssertionError("Usage:\n\t{0} {1} {2}\n\t".format('python3', __file__, 30000))
-    #print(build_generator_function(int(args[1]))) # Using generator
-    print(solution2(int(args[1])))
+    print(build_generator_function(int(args[1]))) # Using generator
+    #print(solution2(int(args[1])))
 
     delta = datetime.now() - now
     print("Time Elapse: {0}".format(str(delta)))

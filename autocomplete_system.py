@@ -1,6 +1,6 @@
 """
 Author: Uchenna Edeh
-Comment: I no there is another way to use binary threes for this. We would explore later
+Comment: I know there is another way to use binary threes for this(tries). We would explore later
 
 Implement an autocomplete system. That is, given a query string s and a set of all possible query strings,
 return all strings in the set that have s as a prefix.
