@@ -16,10 +16,13 @@ def solution1(my_list):
 #        import pdb; pdb.set_trace()
         for k in range(i+1, len(my_list)): 
             if is_overlapped(_list, my_list[k]):
-                if my_list[k] not in seenit:
+                if my_list[k] not in seenit and _list not in  seenit:
                     counter = counter + 2 # any overlap reduces the max possible time slots by 1
+                seenit = [_list,  my_list[k]] + seenit
+            else:
+                if my_list[k] not in seenit and _list not in  seenit:
+                    counter = counter + 1
 
-                seenit.append(my_list[k])
 
     return counter
 
