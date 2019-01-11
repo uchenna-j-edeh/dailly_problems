@@ -10,22 +10,33 @@ import sys
 
 def solution1(A):
     lpw = ''
+    max_lpw = ''
     for i, val in enumerate(A):
         start = i
         end = len(A)
         #for j in range(i+1, end):
-         j = 0
+         j = i + 1 
+         start = i
+         is_even = False
+         is_odd = False
          while(j <= end - 1):
             if start < 0:
                 break 
-            if A[i+1] == A[start]:
+            if is_odd is False and A[j] == A[start]:
                 lpw = A[start : j + 1]
-            if i+2 < end and A[i+2 ] == A[start]:
-                lwp = A[start : j + 2]
-                
-            else:
-                break
+                is_even = True
+                is_odd = False
+        
+            if is_even is False and j + 1 <= end and A[j + 1] == A[start]:
+                lwp = A[start : j + 1]
+                is_odd = True
+                is_odd = False
+
+            if len(max_lpw) < len(lpw):
+                max_lpw = lpw
+
             start = start - 1
+            j = j + 1
 
     return lpw
 
