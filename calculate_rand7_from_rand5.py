@@ -17,7 +17,7 @@ def rand5():
 def rand7():
     """prints a random number betwwen 1 and 7 inclusice using rand5 function"""
     A = [0, 1, 2, 0, 1, 2, 0, 1, 2, 0]
-    idx = datetime.now().second // 10
+    idx = datetime.now().microsecond % 10
     
     return  rand5() + A[idx] 
 

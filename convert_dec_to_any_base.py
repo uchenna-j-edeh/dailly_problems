@@ -4,14 +4,14 @@ converts from base 10 to base n, where n can be any number between 2 and 32
 """
 
 import sys
-ALIST=[]
+ASTR=''
 def solution1(num, base):
     #print(num, base)
-    global ALIST
+    global ASTR 
     #import pdb; pdb.set_trace()
     div = num // base
     reminder = num % base
-    ALIST.append(str(reminder))
+    ASTR = str(reminder) + ASTR
     if div == 0:
         return
 
@@ -25,9 +25,7 @@ def main(args):
         raise ValueError('Select number between 2 and 33 and try again')
 
     solution1(int(args[1]), int(args[2]))
-    result = sorted(ALIST, reverse=True)
-    result = ''.join(result)
-    print(result)
+    print(ASTR)
 
 if __name__ == "__main__":
     try:
