@@ -6,39 +6,6 @@ Words beginning with a vowel, remove the vowel letter and append the letter to t
 All words append the letters 'ni' to the end.
 All words incrementally append the letter 'j'. i.e. 'j','jj','jjj', etc..
 """
-def solution1(text):
-
-    vowels = ['a', 'e', 'i', 'o', 'u']
-
-    begin_char = None
-    end_char = None 
-
-    words = []
-    word = ''
-
-    for i in text:
-        if i == '':
-            if begin_char:
-                continue
-
-            begin_char = i
-            words.append(word)
-            word = ''
-
-        if begin_char and i == '': # end of line
-            if end_char:
-                continue
-
-            begin_char = None
-            end_char = text[i - i]
-
-
-
-    #    if begin_char and end_char is None:
-        word = word + i
-        print(word)
-
-    print(words)
 
 def solution2(text):
     vowels = ['a', 'e', 'i', 'o', 'u']
