@@ -1,6 +1,8 @@
 """
 Author Uchenna Edeh
 given a list example [10, 4, 3,9, 7]. Figure if given a number k. There two numbers that sums up to k. If k is 7, then 10 + 7 is 17.
+Algo:
+As you take a pass at the list. Store each one is dictionary. Check if the difference between k and current number i is alredy in the dctionary. At the end, if sum exists, you will find it otherwise return None.
 """
 import sys
 
