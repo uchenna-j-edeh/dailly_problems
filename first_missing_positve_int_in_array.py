@@ -3,36 +3,36 @@ Author: Uchenna Edeh
 Challenge: Given an array of integers, find the first missing positive in linear time and constant space. 
 In other words, find the lowest positve int that does not exist in the array. The array can contain duplicates and negative numbers as well.
 For example, the input [3,4,-1,1] should give 2. The input [1,2,0] should give 3.
-
-Algorithm: transverse the array, keep track of the highest and lowest positive int. Ignore anything less or equal to 1. At the end, return lowest - 1 if it is defined or highest
+Algo: If we can use efficient sorting alog to sort in place for linear time, then another linear time to pass through the list, we can solve in linear time
 """
 import sys
 BIG_NUM = 1000000
 def solution1(my_list):
-    highest_int = 0
-    lowest_int = BIG_NUM 
+    lowest_int = my_list[0] 
+    prev_num = lowest_int
+    print(my_list)
+    #import pdb; pdb.set_trace()
+    # store in dict
+    for i, val in enumerate(my_list):
+        if i == 0:
+            continue
 
-    import pdb; pdb.set_trace()
-    for _, val in enumerate(my_list):
-        if val <= 1:
-            continue # just skip it
+        if 1 + prev_num == 0:
+            prev_num = val
+            continue
 
-        if val > highest_int:
-            highest_int = val
+        if 1 + prev_num != val:
+            return 1 + prev_num 
 
-        if val < lowest_int:
-            lowest_int = val
+        prev_num = val
 
-    if lowest_int == BIG_NUM:
-        return highest_int + 1 
-
-    return lowest_int - 1
+    return my_list[-1] + 1
         
 def main(args):
     if len(args) != 2:
         raise AssertionError("Usage:\n\tpython3 {0} '{1}'\n\tExpected Result: {2}\n\tPlease Try Again!\n\t".format(__file__, '3,4,-1,1', '2' ))
     X = [int(x) for x in args[1].split(',')]
-    print(solution1(X))
+    print(solution1(sorted(X)))
 
 
 if __name__ == "__main__":
