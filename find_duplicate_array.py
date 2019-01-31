@@ -2,7 +2,7 @@
 Author: Uchenna Edeh
 How do you find the duplicate number on a given integer array?
 Algo:
-sort the array. inspect surronding elements for dupplicate
+sort the array in O(NlogN). inspect surronding elements for dupplicate om O{N)
 """
 def solution1(my_list):
     duplicates = set()
