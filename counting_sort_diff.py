@@ -21,14 +21,14 @@ def solution1(my_nums):
 #        start_point = my_min
 
     int_seq = [0 for i in range(my_min, my_max+1)]
-    print(int_seq)
+    #print(int_seq)
 
     # updating the int_seq with the frequecy of numbers 
     for k in my_nums:
         idx = k - my_min
         int_seq[idx] = int_seq[idx] + 1
 
-    print(int_seq)
+    #print(int_seq)
     new_nums = []
     for j, val in enumerate(int_seq):
         #m = j + my_min
@@ -37,7 +37,17 @@ def solution1(my_nums):
             for n in range(val):
                 new_nums.append(m)
 
-    print(new_nums)
+    #print(new_nums)
+
+    max_diff = 0
+    for i, q in enumerate(new_nums):
+        if i == 0:
+            continue
+        current = q - new_nums[i - 1]
+        if current > max_diff:
+            max_diff = current
+
+    print(max_diff)
 
 nums = '21,41,17,45,9,28,-10,9'
 
