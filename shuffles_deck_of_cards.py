@@ -7,15 +7,15 @@ It should run in O(N) time.
 import random
 import sys
 
-cards = [i + 1 for i in range(52)]
+#cards = [i + 1 for i in range(52)]
 
 def shuffle(k):
+    cards = [i + 1 for i in range(k)]
     """ shuffles a deck of 52 cards 100 times """
-    global cards
     # lets shuffle 100 times
     for i in range(100):
         pos1 = random_generator(k) - 1 # shift result by 1, index must be 0 to 51
-        pos2 = random_generator(k) -1 # shift result by 1, index must be 0 to 51
+        pos2 = random_generator(k) - 1 # shift result by 1, index must be 0 to 51
 #        print pos1, pos2
 
         temp = cards[pos1]

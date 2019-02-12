@@ -8,6 +8,7 @@ For example, given the array [13, 18, 25, 2, 8, 10] and the element 8, return 4 
 
 You can assume all the integers in the array are unique.
 Algorithm: Check elements at both sides. Transverse through the side that has element with value closer to the our given element.
+Another idea is to use binary search to find point at which the high and low exist. Then apply another BS in the second half.
 """
 
 def solution1(my_list, elem):
@@ -34,6 +35,7 @@ def solution1(my_list, elem):
                 return i
             #if val > element or 
 
+def solution2(arr, 
 
 
 _list = "13, 18, 25, 2, 8, 10"

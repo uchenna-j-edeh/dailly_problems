@@ -5,6 +5,10 @@ Example: '21,41,17,45,9,28' should return 13
 """
 
 def solution1(my_nums):
+    result = count_sort(my_nums)
+    return max_difference(result)
+
+def count_sort(my_nums):
     #find max and min
     my_max = my_nums[0] 
     my_min = my_nums[0] 
@@ -16,10 +20,7 @@ def solution1(my_nums):
         if i < my_min:
             my_min = i
 
-#    start_point = 0
-#    if my_min < 0:
-#        start_point = my_min
-
+    # flood list with zeros
     int_seq = [0 for i in range(my_min, my_max+1)]
     #print(int_seq)
 
@@ -28,16 +29,17 @@ def solution1(my_nums):
         idx = k - my_min
         int_seq[idx] = int_seq[idx] + 1
 
-    #print(int_seq)
     new_nums = []
     for j, val in enumerate(int_seq):
-        #m = j + my_min
         if val:
             m = j + my_min
             for n in range(val):
                 new_nums.append(m)
 
     #print(new_nums)
+    return new_nums
+
+def max_difference(new_nums):
 
     max_diff = 0
     for i, q in enumerate(new_nums):
@@ -47,7 +49,7 @@ def solution1(my_nums):
         if current > max_diff:
             max_diff = current
 
-    print(max_diff)
+    return max_diff
 
 nums = '21,41,17,45,9,28,-10,9'
 
