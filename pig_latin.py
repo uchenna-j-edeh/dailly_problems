@@ -11,8 +11,8 @@ def solution2(text):
     vowels = ['a', 'e', 'i', 'o', 'u']
 
     words = text.split()
-    new_words = []
-    print words
+    new_words = ''
+    print (words)
     for i, word in enumerate(words):
         new_word = ''
         if word[0] in vowels:
@@ -21,9 +21,9 @@ def solution2(text):
             new_word = word
 
         new_word = new_word + 'ni' + 'j'*(i+1)
-        new_words.append(new_word)
+        new_words = new_words + new_word + " " 
 
-    return ' '.join(new_words)
+    return new_words.strip()
 
 
-print solution2('The red brown fox jumps over the short fence')
+print (solution2('The red brown fox jumps over the short fence'))
