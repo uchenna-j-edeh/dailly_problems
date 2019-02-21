@@ -7,7 +7,7 @@
 
 def solution1(a, i, j):
     if not len(a):
-        raise ValueError()
+        raise ValueError('Array is empty...')
         
     
     first_part = a[:i]

@@ -24,6 +24,6 @@ def solution(my_str):
 
     return len(stack)
 
-#print(solution("()())()"))
-#print(solution("(()())()"))
+print(solution("()())()"))
+print(solution("(()())()"))
 print(solution(")("))
