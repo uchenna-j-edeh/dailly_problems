@@ -6,7 +6,9 @@ Example 27 / 5 = 5
 
 
 def solution1(numerator, denominator):
-    
+    """ When the num is excessively large, this can over flow the stack
+        Use only when denominator is small.
+    """    
     if numerator < denominator:
         return 0
 
