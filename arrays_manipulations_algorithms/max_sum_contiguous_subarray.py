@@ -15,20 +15,26 @@ use three variables
 """
 import sys
 
-def solution1(alist):
-    max_cont = 0
-    max_idx = 0
-    running_max = 0
-    previous_running_total = 0
-    for i, al in enumerate(alist):
-        if running_max + al - previous_running_total > max_cont:
-            max_cont = running_max + al - previous_running_total
-            running_max = max_cont
-            previous_running_total = 0
+def solution1(A):
+    max_sum_contiguos = A[0]
+    current_sum = 0
+    previous = 0
 
-            
-        running_max = running_max + al
-            
+    for i, val in enumerate(A): 
+        current_sum = val + current_sum   
+
+        if current_sum  > max_sum_contiguos:        
+            max_sum_contiguos = current_sum
+        else:
+           if val > current_sum:
+               current_sum = val
+           if current_sum > max_sum_contiguos:
+               max_sum_contiguos = current_sum
+
+    previous = val
+
+    return max_sum_contiguos 
+     
 
 def main(args):
     if len(args) != 2:

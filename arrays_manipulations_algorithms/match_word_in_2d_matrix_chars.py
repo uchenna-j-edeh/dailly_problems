@@ -43,5 +43,5 @@ two_d_matrix = [
         ['M', 'A', 'S', 'S']
 ]
 
-word = input('Enter a word: ')
+word = input('Enter a word: ') # Example FOAM or MASS
 print(is_match(two_d_matrix, word))
