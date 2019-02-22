@@ -35,4 +35,4 @@ def bs_find_max_rotated_arr(arr, i):
 
      
 arr = [5,6,7,8,9,10,1,2,3]
-print(bs_find_max_rotated_arr(arr, 9))
+#print(bs_find_max_rotated_arr(arr, 9))
