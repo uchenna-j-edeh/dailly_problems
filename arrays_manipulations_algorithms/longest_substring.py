@@ -39,6 +39,3 @@ if __name__ == "__main__":
     except AssertionError as e:
         print(e)
         sys.exit(1)
-
-
-
