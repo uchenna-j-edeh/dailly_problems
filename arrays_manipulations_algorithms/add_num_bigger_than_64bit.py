@@ -22,6 +22,8 @@ def add_outsize_ints(a, b):
 
     carry_over = 0
     result = []
+    last_variable = 0
+
     for i, val in enumerate(longer):
         sum_ab = 0
         idx = len_a - i - 1
@@ -34,16 +36,17 @@ def add_outsize_ints(a, b):
         carry_over = _sum // 10
 
         result = [str(sum_ab)] + result
-
-
-
-    if result[0] == '0':
-        result = ['1'] + result
+        if i + 1 == len(longer):
+            last_variable = _sum // 10
+             
+    print(carry_over)
+    if last_variable:
+        result = [str(last_variable)] + result
     return ''.join(result)
 
-print(add_outsize_ints('99977', '977'))
+print(add_outsize_ints('99999', '99999'))
 print(add_outsize_ints(
-    '99999999999999999999999999999999999999999906940404999999999999999999999999999999999999999999999999999999999999999223372036854775807', 
+    '999999999999999999999999999999999999999999069404049999999999999999999999999999999999999999999999999999999999999992233720368547758079999999900000000000', 
     '999998549548949845984598494985854948954945849589549845785958949458999999999999999999999999999999999999999999999999999999999999999999223372036854775807'))
 
 
