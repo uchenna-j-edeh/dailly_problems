@@ -10,12 +10,12 @@ def solution1(matrix):
         for j, _ in enumerate(val0):
             if i == j:
                 tab = '-'*(i+1)
-                #print(tab + repr(matrix[i][j]))
+                print(tab + repr(matrix[i][j]))
             indx = -1 * (i + 1)
             len_val = len(val0)
             if j == (len_val + indx): 
                 tab = '-'*(len_val - i)
-                print(tab +  repr(matrix[i][indx]))
+#                print(tab +  repr(matrix[i][indx]))
 
 
 

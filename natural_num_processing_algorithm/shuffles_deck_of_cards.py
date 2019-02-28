@@ -13,6 +13,7 @@ def shuffle(k):
     cards = [i + 1 for i in range(k)]
     """ shuffles a deck of 52 cards 100 times """
     # lets shuffle 100 times
+    print(cards)
     for i in range(100):
         pos1 = random_generator(k) - 1 # shift result by 1, index must be 0 to 51
         pos2 = random_generator(k) - 1 # shift result by 1, index must be 0 to 51

@@ -37,7 +37,7 @@ def add_outsize_ints(a, b):
 
         result = [str(sum_ab)] + result
         if i + 1 == len(longer):
-            last_variable = _sum // 10
+            last_variable = _sum // 10 # over flow variable
              
     print(carry_over)
     if last_variable:
