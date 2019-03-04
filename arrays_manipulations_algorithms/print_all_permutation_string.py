@@ -30,18 +30,19 @@ def permute(a, l, r):
 # 1. String
 # 2. Starting index of the string
 # 3. Ending index of the string.
-def permute(a, l, r):
-    if l==r:
-        print(toString(a))
-    else:
-        for i in range(l,r+1):
-            a[l], a[i] = a[i], a[l]
-            permute(a, l+1, r)
-            a[l], a[i] = a[i], a[l] # backtrack
+#def permute(a, l, r):
+#    if l==r:
+#        print(toString(a))
+#    else:
+#        for i in range(l,r+1):
+#            a[l], a[i] = a[i], a[l]
+#            permute(a, l+1, r)
+#            a[l], a[i] = a[i], a[l] # backtrack
 
 
 #string = "ABCDEFG"
-_str = 'UCHENA'
+#_str = 'UCHENA'
+_str = 'UCHE'
 n = len(_str) 
 a = list(_str) 
 permute(a, 0, n-1) 
