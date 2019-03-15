@@ -8,13 +8,11 @@ Bonus: Can you do it in one line?
 """
 
 def swap_eight_bits(eb):
-    return [eb[i]+eb[i-1] for i in range(0, len(eb), 2)]
+    return ''.join([eb[i:i+2][1] + eb[i:i+2][0] for i in range(0, len(eb), 2)])
 
-        
+
 
     #return ''.join([eb[i] + eb[i-1]  for i in range(0, len(eb), 2)])
 
 print(swap_eight_bits('10101010'))
 print(swap_eight_bits('11100010'))
-
-
