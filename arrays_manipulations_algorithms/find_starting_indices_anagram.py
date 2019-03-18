@@ -22,5 +22,7 @@ def solution(S, W):
     return indices
 
 print(solution('abxaba', 'ab'))
+print(solution('abxabaa', 'aa'))
+print(solution('abxabaa', 'aab'))
 
 

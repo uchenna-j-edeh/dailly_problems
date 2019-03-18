@@ -21,5 +21,5 @@ def solution(mylist, k):
                     seq = seq[i+1:]
 
 print(solution([1,2,3,4,5,45], 50))
-#print(solution([1,2,3,4,5], 7))
-#print(solution([1,2,3,4,5], 9))
+print(solution([1,2,3,4,5], 7))
+print(solution([1,2,3,4,5], 9))
