@@ -7,6 +7,9 @@ from there interate left and right comparing the results of both side and placin
 """
 import math
 
+def square(x):
+    return x * x
+
 def solution(my_list):
     # find the lowest positive, we could use binary search too
     lowest_positive = 0
@@ -23,16 +26,16 @@ def solution(my_list):
     while k < len(my_list):
         if j < 0:
             for u in range(i, len(my_list)):
-                new_list.append(math.square(u))
+                new_list.append(square(u))
             return
         if i >= len(my_list):
             for v in len(my_list):
                 if j - 1 < 0:
                     return
-                new_list.append(math.square(j-1))
+                new_list.append(square(j-1))
 
-        nsquare = math.square(my_list[i])
-        psquare = math.square(my_list[j])
+        nsquare = square(my_list[i])
+        psquare = square(my_list[j])
 
         if psquare < nsquare:
             new_list.append(psquare)
@@ -49,7 +52,9 @@ def solution(my_list):
 
         k += 1
 
+    return new_list
 
+print(solution( [-9, -2, 0, 2, 3]))
         
 
 
