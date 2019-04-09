@@ -46,6 +46,19 @@ class LinkedList(object):
         else:
             self.head = new_element
  
+    def delete(self, value):
+        current = self.head
+        previous = None
+        while current.value != value and current.next:
+            previous = current
+            current = current.next
+        if current.value == value:
+            if previous:
+                previous.next = current.next
+        else:
+            self.head = current.next
+
+
     def insert_v2(self, new_element, position):
         element = self.get_position(position)
         if element:
