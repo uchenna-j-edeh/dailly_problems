@@ -32,6 +32,16 @@ class LinkedList(object):
 
         return None
 
+    def length(self):
+        current = self.head
+        count = 0
+        if self.head:
+            while current.next:
+                count = count + 1
+                current = current.next
+
+        return count
+
     def insert(self, new_element, position):
         current = self.head
         count = 0
@@ -94,3 +104,5 @@ if __name__ == "__main__":
     llist.insert(nodex, 5)
     llist.append(nodey)
     llist.print_nodes()
+
+    print('Length of this list is =>', llist.length())
