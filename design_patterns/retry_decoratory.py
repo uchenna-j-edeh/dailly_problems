@@ -42,14 +42,14 @@ def scan_dir(path, filename):
 
         
 
-@click.command()
-@click.option("--path", default="", help="full path of the folder to be scanned.")
-@click.option("--filename", default="", help="The filename to be scanned.")
+# @click.command()
+# @click.option("--path", default="", help="full path of the folder to be scanned.")
+# @click.option("--filename", default="", help="The filename to be scanned.")
 def main(path, filename):
-    if not len(path):
-        click.prompt("Provide the file path here: ")
-    if not len(filename):
-        click.prompt("Enter the name of the file here: ")
+    # if not len(path):
+    #     click.prompt("Provide the file path here: ")
+    # if not len(filename):
+    #     click.prompt("Enter the name of the file here: ")
 
     try:
         scan_dir(path, filename)
@@ -57,5 +57,9 @@ def main(path, filename):
         print("File does not exist, create it first.")
 
 if __name__ == '__main__':
-    main()
+    import sys
+    path = sys.argv[1]
+    filename = sys.argv[2]
+    main(path, filename)
+    
     
