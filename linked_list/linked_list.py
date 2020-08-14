@@ -101,8 +101,13 @@ if __name__ == "__main__":
 
     nodex = Node(45) 
     nodey = Node(55) 
+    print('inserting node...')
     llist.insert(nodex, 5)
+    print('appending node')
     llist.append(nodey)
+    llist.print_nodes()
+    print('deleting node')
+    llist.delete(0)
     llist.print_nodes()
 
     print('Length of this list is =>', llist.length())
