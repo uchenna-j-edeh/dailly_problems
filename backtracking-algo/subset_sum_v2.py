@@ -2,7 +2,7 @@ def solve(my_set, index=0):
     all_sub_sets = []
     set_sum = sum(my_set)
     if len(my_set) == index:
-        all_sub_set.append[[0]) 
+        all_sub_set.append(0) 
     if set_sum == curr_sum:
         return my_sets
     elif set_sum > curr_sum:
@@ -18,6 +18,6 @@ def solve(my_set, index=0):
 
     return all_sub_sets
 
-print("Solution is: ", solve(['a', 'b', 'c', 'd', 'e', 'f']))
+print("Solution is: ", solve([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]))
 
 
