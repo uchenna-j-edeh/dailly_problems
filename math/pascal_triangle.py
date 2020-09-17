@@ -42,7 +42,7 @@ class Solution:
 sol = Solution()
 print("The solution is: ", pp(sol.generate(5)))
 print("The solution is: ", pp(sol.generate(15)))
-print(sol.generate(20))
+pp(sol.generate(100))
 
 
 
