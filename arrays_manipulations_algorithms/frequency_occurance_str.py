@@ -4,14 +4,14 @@ returns {'u':1, 'c':1, 'h':1, 'e':, 'n':2, 'a':1}
 """
 
 def solution(my_name):
-    my_hash = dict()
+    hash = dict()
     for i in my_name:
-        if my_hash.get(i, False):
-            my_hash[i] += 1
+        if hash.get(i, False):
+            hash[i] += 1
         else:
-            my_hash[i] = 1
+            hash[i] = 1
 
-    return my_hash
+    return hash
 
 print(solution('uchenna edeh'))
 print(solution('christina'))

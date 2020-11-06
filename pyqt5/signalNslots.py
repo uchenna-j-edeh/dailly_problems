@@ -13,7 +13,7 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("My Awesome App")
 
-        layout = QVBoxLayout()
+        layout = QHBoxLayout()
 
         for n in range(10):
             btn = QPushButton(str(n))

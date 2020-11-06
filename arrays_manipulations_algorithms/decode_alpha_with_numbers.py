@@ -7,7 +7,7 @@ import sys
 import math
 
 def solution1(number):
-    my_hash = dict()
+    hash = dict()
     a_char = ord('a')
     z_char = ord('z')
     characters = []
@@ -16,7 +16,7 @@ def solution1(number):
         characters.append(chr(ch))
 
     for i, val in enumerate(characters):
-        my_hash[i+1] = val
+        hash[i+1] = val
 
     len_str = len(number) 
     my_collection = []
@@ -26,7 +26,7 @@ def solution1(number):
             all_char = ''
             for j in list(number):
                 try:
-                    all_char = all_char + my_hash[int(j)] 
+                    all_char = all_char + hash[int(j)] 
                 except KeyError:
                     raise KeyError('Invalid value {0}.'.format(j))
 
@@ -40,13 +40,13 @@ def solution1(number):
         remainder = number % multiplier
 
         try:
-            my_collection.append(my_hash[division] + my_hash[remainder])
+            my_collection.append(hash[division] + hash[remainder])
         except KeyError:
             raise KeyError('Invalid value {0} or {1}.'.format(division, remainder))
 
     return my_collection
 
-    #pp(my_hash)
+    #pp(hash)
 
 def main(args):
     if len(args) != 2:

@@ -15,13 +15,13 @@ Sample Output
 lst = [21,60]
 """
 def findSum(lst, value):
-    my_hash = dict()
+    hash = dict()
     for i in lst:
-        my_hash[i] = 1
+        hash[i] = 1
 
     for j in lst:
         my_diff = value - j
-        if my_hash.get(my_diff, False):
+        if hash.get(my_diff, False):
             return [j, my_diff]
 
 print(findSum([1,21,3,14,5,60,7,6], 81)) 

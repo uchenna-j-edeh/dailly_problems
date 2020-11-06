@@ -10,24 +10,24 @@ Question: Can elements be repeated? Assume NO.
 def longest_sequence(mylist):
     # first store all the elements in a hash map.
 
-    my_hash = dict()
+    hash = dict()
     for i in mylist:
-        if my_hash.get(i, False):
-            my_hash[i] = my_hash[i] + 1
+        if hash.get(i, False):
+            hash[i] = hash[i] + 1
         else:
-            my_hash[i] = 1
+            hash[i] = 1
 
     
     longest_seq = []
     for val in (mylist):
         seq = []
-        if my_hash.get(val - 1, False): # if there is a lower value skip
+        if hash.get(val - 1, False): # if there is a lower value skip
             continue
 
         #seq.append(val)
         count = 0
         while True:
-            if my_hash.get(val + count, False)
+            if hash.get(val + count, False)
                 seq.append(val)
             else:
                 break

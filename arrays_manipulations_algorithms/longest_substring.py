@@ -8,20 +8,20 @@ import sys
 def solution1(my_str):
     longest_str = ''
     running_total = ''
-    my_hash = dict()
+    hash = dict()
     for _char in my_str:
-        if my_hash.get(_char, False):
+        if hash.get(_char, False):
             #print(running_total)
             #print(longest_str)
             if len(running_total) > len(longest_str):
                 longest_str = running_total
-            my_hash = dict()
-            my_hash[_char] = 1
+            hash = dict()
+            hash[_char] = 1
             running_total = _char
 
         else:
             running_total = running_total + _char
-            my_hash[_char] = 1
+            hash[_char] = 1
 
     if len(running_total) > len(longest_str):
         longest_str = running_total
