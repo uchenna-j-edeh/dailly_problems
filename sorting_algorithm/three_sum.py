@@ -21,5 +21,9 @@ def findZeroSum(arr):
                     seen_index[values] = 1
     return result
 
+#def findZeroSum_v2(arr):
+#    sl = sorted(arr)
+#    for i in len(arr):
+#        for 
 
 print(findZeroSum([10, 3, -4, 1, -6, 9]))

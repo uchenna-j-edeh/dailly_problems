@@ -39,6 +39,12 @@ def solution(A, B, M):
              return aList
         i = i + 1
         
+def solution0(n, A, B):
+    if n == 0:
+        return A
+    return solution0(n - 1, B, A + B)
+    
+
 print("The solution is: ", solution(0, 1, 2))
 print("The solution is: ", solution(0, 1, 3))
 print("The solution is: ", solution(1, 2, 3))

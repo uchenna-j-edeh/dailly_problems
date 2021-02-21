@@ -41,3 +41,8 @@ arr = [
     ]
 
 print(dutch_flag(arr))
+
+arr = ['G', 'B', 'G', 'G', 'R', 'B', 'R', 'G']
+print(dutch_flag(arr))
+
+print(dutch_flag(['R', 'R']))
