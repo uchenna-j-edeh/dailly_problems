@@ -13,6 +13,7 @@ import heapq
 
 def kth_largest(words, k=4):
     alist = []
+    heapq.heapify(alist)
     for w in words:
         heapq.heappush(alist, len(w))
         if len(alist) > k:
