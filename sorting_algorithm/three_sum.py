@@ -26,4 +26,17 @@ def findZeroSum(arr):
 #    for i in len(arr):
 #        for 
 
-print(findZeroSum([10, 3, -4, 1, -6, 9]))
+def findZeroSum2(arr):
+    arr = arr.sort()
+    sum_three = list()
+    for i in range(len(arr)):
+        j = i + 1
+        k = j + 1
+        if arr[i] + arr[j] + arr[k] > 0:
+            return sum_three
+        if k < len(arr):
+            if arr[i] + arr[j] + arr[k] == 0:
+                sum_three.append([arr[i] , arr[j] , arr[k]])
+        
+    return sum_three
+# print(findZeroSum([10, 3, -4, 1, -6, 9]))
