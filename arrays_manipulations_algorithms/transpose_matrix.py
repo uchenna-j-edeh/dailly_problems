@@ -9,13 +9,10 @@ def transpose(matrix):
     transpose = []
     for i in range(len(matrix[0])): # i = 0, 
         for j in range(len(matrix)): # j = 0, 1
-            if not len(transpose): # True
+            if len(transpose) < j+1: # True
                 transpose.append([]) # [ [] ]
 
-            if not len(transpose[j]):
-                 transpose[j].append[0]
-            # print(transpose)
-            transpose[j][i] = matrix[i][j]     # [[1]]
+            transpose[j].append(matrix[i][j])     # [[1]]
 
     return transpose   
 
