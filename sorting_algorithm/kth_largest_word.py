@@ -6,14 +6,13 @@ yours   = 5
 Edeh    = 4
 Name    = 4
 what    = 4
-
 """
 
 import heapq
 
 def kth_largest(words, k=4):
     alist = []
-    heapq.heapify(alist)
+    # heapq.heapify(alist)
     for w in words:
         heapq.heappush(alist, len(w))
         if len(alist) > k:

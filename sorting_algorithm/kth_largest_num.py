@@ -26,4 +26,4 @@ def topK(arr, k):
 print(topK([1, 5, 4, 4, 2], 2))
 print(topK([1, 5, 1, 5, 1], 3))
 arr = [5,6,1,4,1,8,2,4,1,7,9,3,2,1,2]
-print(topK(arr, 2))
+print(topK(arr, 20))

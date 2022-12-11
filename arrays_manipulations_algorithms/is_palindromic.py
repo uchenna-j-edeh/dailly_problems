@@ -58,8 +58,9 @@ def check_palindrome(input):
     while(len_input - i > 2):
     # for i in range(len(input)):
         if is_palindrom(input[i:j]):
-            j = j + 1
             curr = input[i:j]
+            j = j + 1
+            
         else:
             i = i + 1
             j = i + 2
