@@ -13,7 +13,7 @@ def is_equal(s1, s2):
         # if len(s1) - 1 >= i:
         #     return False
         
-        if  len(s1) - 1 >= i or s1[i].lower() != s2[i].lower()): # i = 4, len(s1) = 4
+        if  len(s1) - 1 >= i or (s1[i].lower() != s2[i].lower()): # i = 4, len(s1) = 4
             return False
     return True
 
