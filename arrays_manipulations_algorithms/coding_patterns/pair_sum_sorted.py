@@ -34,3 +34,4 @@ def pair_sum_sort(mlist, mtarget):
     return result
 print(pair_sum_sort([-5, -2, 3, 4, 6], 7))
 print(pair_sum_sort([],0))
+print(pair_sum_sort([-1, 0, 1, 2], 3))
